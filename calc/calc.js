@@ -51,15 +51,15 @@ var prices = {
     };
 
 var fullName = {
-    stamped: "Letter (Stamped)",
-    metered: "Letter (Metered)",
-    large: "Large Envelope (Flat)",
-    package: "First-Class Package Service—Retail"
-    }
+    "stamped": "Letter (Stamped)",
+    "metered": "Letter (Metered)",
+    "large"  : "Large Envelope (Flat)",
+    "package": "First-Class Package Service—Retail"
+    };
 
 var app = express();
 
-app .use(express.static("calc/static", "form.html"))
+app .use(express.static("calc/static", {index: "form.html"}))
     .set('views', 'calc/views')
     .set('view engine', 'ejs')
     .get("/payment", function(req, res){
