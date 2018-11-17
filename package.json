@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "My node project",
   "main": "server.js",
+  "git": "https://git.heroku.com/hidden-city.git",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
