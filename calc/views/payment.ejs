@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Thomas Peck</title>
+    <title> Shipping Prices </title>
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -10,7 +10,8 @@
     <section id="main">
         <h2>Result</h2>
         <p>
-            You orderd: <%= type %> with a weight of <%= weight %> oz. wich will cost $<%= price %>.
+            You are shipping a "<%= type %>" with a weight of <%= weight %> oz.
+            wich will cost <%= new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(price) %>.
         </p>
     </section>
     
