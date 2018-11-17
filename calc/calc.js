@@ -50,9 +50,16 @@ var prices = {
         }
     };
 
+var fullName = {
+    stamped: "Letter (Stamped)",
+    metered: "Letter (Metered)",
+    large: "Large Envelope (Flat)",
+    package: "First-Class Package Service—Retail"
+    }
+
 var app = express();
 
-app .use(express.static("calc/static"))
+app .use(express.static("calc/static", "form.html"))
     .set('views', 'calc/views')
     .set('view engine', 'ejs')
     .get("/payment", function(req, res){
@@ -67,7 +74,7 @@ app .use(express.static("calc/static"))
         res.render("payment", {
             price: price,
             weight: data.weight,
-            type: data.type
+            type: fullName[data.type]
             });
         res.end();
     });
